@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flu in the USA</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Flu in the USA">
+  <meta name="author" content="Jonathan Martin">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Flu in the USA</h1>
+    <h2>Coursera Developing Data Products Course Project</h2>
+    <p>Jonathan Martin<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Flu</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Flu basics</strong>:</p>
+
+<ul>
+<li>Contagious respiratory illness caused by influenza viruses.</li>
+<li>Can cause mild to severe illness</li>
+<li>But some groups (people under 5 or over 65, and pregnant women) are at higher risk of complications</li>
+<li>Occasional appearance of more severe strains (e.g. H1N1 aka &quot;swine flu&quot;)</li>
+<li>More info: <a href="http://www.cdc.gov/flu/about/disease/index.htm">http://www.cdc.gov/flu/about/disease/index.htm</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Flu Surveillance</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>US Centers for Disease Control</strong></p>
+
+<ul>
+<li>Collect data about flu cases from various sources</li>
+<li>Early warning of outbreaks</li>
+<li>Lots of different data collected, but this project looks at: the U.S. Outpatient Influenza-like Illness Surveillance Network (ILINet)</li>
+</ul>
+
+<p><strong>ILINet</strong></p>
+
+<ul>
+<li>Weekly reports from 1,800 outpatient healthcare providers around the country </li>
+<li>Number of patients with influenza-like illness (ILI) by age group</li>
+<li>ILI is defined as fever (temperature of 100°F [37.8°C] or greater) and a cough and/or a sore throat without a KNOWN cause other than influenza</li>
+<li>More info: <a href="http://www.cdc.gov/flu/weekly/overview.htm">http://www.cdc.gov/flu/weekly/overview.htm</a> </li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Presents ILINet data in graph form</strong></p>
+
+<ul>
+<li>Original data: <a href="http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html">http://gis.cdc.gov/grasp/fluview/fluportaldashboard.html</a></li>
+<li>5 time series (5 age groups and a total)</li>
+<li>Project limited to 2009-2014 (to avoid some periods of incomplete data)</li>
+<li>Project code graphs this data, with options to select among the time series and smooth the data by taking a moving average over a specified number of weeks</li>
+</ul>
+
+<p><strong>Look for patterns</strong></p>
+
+<ul>
+<li>Seasonal cycle?</li>
+<li>Relative size of outbreaks?</li>
+<li>Different patterns in different age groups?</li>
+<li>etc.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Project results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>You might have to hit refresh to get the graph to show up here. Scroll down for controls.</strong></p>
+
+<div align="center">
+<iframe 
+  src="http://jjsmartin.shinyapps.io/course_project" width="10" height="10" >
+</iframe></div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Project results link</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>If the thing didn&#39;t display on the previous page, here&#39;s a link:</p>
+
+<p><a href="http://jjsmartin.shinyapps.io/course_project">http://jjsmartin.shinyapps.io/course_project</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Some R code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>And here&#39;s the results of some pointless R code:</p>
+
+<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Future work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>Ideas</strong></p>
+
+<ul>
+<li>use proportions of the population, rather than just raw numbers</li>
+<li>more detailed geographic breakdown (e.g. by state)</li>
+<li>fit a model to each time series and make predictions</li>
+<li>compare to other data (e.g. how accurate is Google Flu Trends?)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Flu'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Flu Surveillance'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Project'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Project results'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Project results link'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Some R code'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Future work?'>
+         7
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
