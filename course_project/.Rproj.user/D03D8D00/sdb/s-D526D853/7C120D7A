@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# library(devtools)\n\n# install_github( 'slidify', 'ramnathv' )\n# install_github( 'slidifyLibraries', 'ramnathv' )\n\n# library(slidify)\n\n\nsetwd( \"C:\\\\Users\\\\jjsm\\\\Documents\\\\Coursera\\\\Developing Data Products\\\\course_project_slides\" )\n  \n# author( \"course_project_slides\" )\n\nslidify( \"index.Rmd\" )\n\n",
+    "created" : 1406453869809.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3115782848",
+    "id" : "7C120D7A",
+    "lastKnownWriteTime" : 1406480651,
+    "path" : "~/Coursera/Developing Data Products/slidify_Setup.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : true,
+    "type" : "r_source"
+}

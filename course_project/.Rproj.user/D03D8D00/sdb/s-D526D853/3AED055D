@@ -1,0 +1,16 @@
+{
+    "contents" : "\n## UI for flu time series display\n\nlibrary(shiny)\n\n\nshinyUI(fluidPage(\n  \n  fluidRow(\n    \n    titlePanel(\"Flu Cases in USA, 2009 to 2014\"),\n    \n    helpText(\"Use the checkboxes to select which time series you want to see plotted.\" ),\n    \n    helpText(\"Use the slider to select the order of smoothing - i.e. the number of weeks to average over\"),\n\n    plotOutput(\"plot1\"),\n    \n    hr(),\n    \n    # slider setting the order of smoothing (i.e. the number of weeks to average over )\n    column(3, \n      wellPanel(\n        sliderInput(\"slider1\", \n                    label = h5(\"Number of weeks to average over:\"),\n                    min   = 1, \n                    max   = 20, \n                    value = 1) ) ),\n    \n\n    # checkboxes for selection of the diferent time series\n    column( 3, offset= 1,\n      wellPanel(\n            checkboxGroupInput( \"checkGroup\", \n                                label   = h3(\"Age ranges\"), \n                                choices = list( \"All ages\"  = 1, \n                                                \"0 to 4\"    = 2, \n                                                \"5 to 24\"   = 3,\n                                                \"25 to 49\"  = 4,\n                                                \"50 to 64\"  = 5,\n                                                \"65+\"       = 6),\n                                selected = 1) ) )\n    \n    \n  ))\n)\n\n\n\n",
+    "created" : 1406372112776.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4240143298",
+    "id" : "3AED055D",
+    "lastKnownWriteTime" : 1406483608,
+    "path" : "~/Coursera/Developing Data Products/data_products_coursera/course_project/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

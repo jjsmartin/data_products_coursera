@@ -1,0 +1,16 @@
+{
+    "contents" : "\n## Plot a select of time series, as determined by UI checkboxes\n\n\nlibrary(shiny)\nlibrary(\"TTR\")  # for SMA() smoothing function\n\nshinyServer(function(input, output) {\n   \n    # read in the data\n    flu <- read.csv( \"fludata.csv\",\n                     header = TRUE)\n  \n    # used for the construction of time series object\n    # (this bit is not recalculated each time the widget changes)\n    start.year <- flu$YEAR[ 1 ]\n    start.week <- flu$WEEK[ 1 ]\n    end.year   <- flu$YEAR[ length(flu$YEAR) ]\n    end.week   <- flu$WEEK[ length(flu$WEEK) ] \n\n    # construct a time series object with the selected variables, then plot it\n    flu.ts <- ts( data = cbind( flu$AGE.all, flu$AGE.0.4, flu$AGE.5.24, flu$AGE.25.49, flu$AGE.50.64, flu$AGE.65 ),\n                  start = 1,\n                  end = 250 )\n    \n    \n    # plot a subset of the time series according to the checkbox selections from ui.R\n    # (this bit is re-run everytime the associated widget changes)\n    output$plot1 <- renderPlot({\n      \n      # create a list of the indices of the selected variables\n      selected_vars <- list()\n      for ( i in 1:6 ) {\n        if ( i %in% input$checkGroup ){\n          selected_vars <- c( selected_vars, i )\n        }\n      }   \n      selected_vars <- sort( unlist( selected_vars ) ) # it's a list of lists otherwise. Sort to get consistency with colours (see below)\n\n      \n      # smooth the time series values if smoothing is selected\n      flu.ts <- apply( flu.ts, 2, SMA, n=input$slider1 )\n      \n      # plot a time series plot with the selected time series variables\n      plot.ts(  flu.ts[, selected_vars ],\n                  plot.type = \"single\",\n                  ylab      = \"number of cases\",\n                  xlab      = \"time\",\n                  col       = c(\"black\", \"red\", \"orange\", \"green\", \"blue\", \"purple\")[ selected_vars ],  # for consistency in colours\n                  ylim      = c(0,70000),\n                  axes      = FALSE )   # don't plot the axis yet\n      \n      # plot the axis separately, so we can label it better\n      weeks <- seq( as.Date( \"2009/9/28\"), length.out=length( flu$AGE.all ), by=\"10 weeks\" )   # I *think* this is the right date...\n      axis( 1,  # x axis\n            labels = weeks, \n            at     = seq(from=1, by=10, length.out=length(weeks) ) )\n      box()\n  })\n  \n})\n\n",
+    "created" : 1406372113518.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1939155947",
+    "id" : "B620744B",
+    "lastKnownWriteTime" : 1406467776,
+    "path" : "~/Coursera/Developing Data Products/course_project/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
